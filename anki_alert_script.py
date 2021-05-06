@@ -29,7 +29,7 @@ def log_success(reviews_due):
     file.write("{},Review status checked successfully ({})\n".format(create_timestamp(),reviews_due))
 
 
-### Pull into user specific data from parameter file
+### Pull in user specific data from parameter file
 def load_config_params(file_name: str):
   try:
     with open(file_name) as file:
