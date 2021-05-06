@@ -1,9 +1,13 @@
-from requests import Session,post
-from bs4 import BeautifulSoup as bs
-import yaml
 from datetime import datetime as dt
+import os 
 
-LOG_FILE = "history.log"
+from bs4 import BeautifulSoup as bs
+from requests import Session,post
+import yaml
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+LOG_FILE = "{}/history.log".format(DIR_PATH)
+PARAMS_FILE = "{}/config_params.yaml".format(DIR_PATH)
 
 
 ###
@@ -40,7 +44,7 @@ def load_config_params(file_name: str):
   return params
 
 
-### Login to ankiweb and graph the ankiweb.net/decks page
+### Login to ankiweb and grab the ankiweb.net/decks page
 def scrape_ankiweb(params: dict):
   ANKI_LOGIN_FORM_POST_URL = 'https://ankiweb.net/account/login'
   ANKI_DECKS_URL = 'https://ankiweb.net/decks/'
@@ -110,7 +114,7 @@ def send_alert(params, reviews_due):
 
 
 def main():
-  params = load_config_params('config_params.yaml')
+  params = load_config_params(PARAMS_FILE)
   decks_page_content = scrape_ankiweb(params)
   reviews_due = munge_decks_page(decks_page_content)
   send_alert(params, reviews_due)
