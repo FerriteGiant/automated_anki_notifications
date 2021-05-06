@@ -56,12 +56,14 @@ Clone the project to a computer you plan to always have running and on which you
 ## Usage
 
 Edit your crontab `crontab -e`
+
 Add the following line assuming that you placed the project into your home directory and want the script to run at 8pm everyday.
+
 `0 20 * * * python3 ~/automated_anki_notifications/anki_alert_script.py >/dev/null 2>&1`
 
 Each time the script runs it will write a line to `automated_anki_notifications/history.log` with either a success or an error message.
 
-Example log file
+#### Example log file
 ```
 1620279454,20210505,22:37:34,Review status checked successfully (2)
 1620279773,20210505,22:42:53,Issue opening or reading from parameters file
