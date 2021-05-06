@@ -1,0 +1,977 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="bg-gray">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>
+        
+            Decks
+            - AnkiWeb
+        
+    </title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="/static/app.css?_=e1067557dddbf4b2e6bb71ce92da25fb"
+          type="text/css" media="screen"/>
+
+    
+    <style>
+        .deckDueNumber {
+            text-align: right;
+            font-size: 0.85rem;
+        }
+    </style>
+
+
+
+    
+
+</head>
+<body>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-gray">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="https://ankiweb.net/"><span
+                    class="align-middle">AnkiWeb</span> <img id=logo height=32
+                                                             width=32
+                                                             src="/static/anki-logo2.png"></a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a
+                                href="https://ankiweb.net/decks/" class="nav-link">Decks</a></li>
+                        <li class="nav-item "><a
+                                href="https://ankiuser.net/edit/" class="nav-link">Add</a></li>
+                        <li class="nav-item "><a
+                                href="https://ankiweb.net/search/" class="nav-link">Search</a>
+                        </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a
+                                    href="https://ankiweb.net/account/settings"
+                                    class="nav-link">Account</a>
+                        </li>
+                        <li class="nav-item"><a href="https://ankiweb.net/account/logout"
+                                                class="nav-link">Log out</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<main class="container">
+
+    
+
+
+
+
+
+<h1>Decks</h1>
+
+<div class="container-fluid px-0">
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All"
+                            id="did1609785478466"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;All</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#007700'>1</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1609785478466')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1609785478466')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1609785478466')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::biochem"
+                            id="did1567554526467"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biochem</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1567554526467')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1567554526467')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1567554526467')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::C"
+                            id="did1518245008737"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1518245008737')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1518245008737')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1518245008737')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::ElectricalEngineering"
+                            id="did1618944979427"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElectricalEngineering</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1618944979427')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1618944979427')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1618944979427')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Embedded"
+                            id="did1613084739234"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Embedded</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1613084739234')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1613084739234')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1613084739234')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Go"
+                            id="did1609301027141"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1609301027141')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1609301027141')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1609301027141')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Greek Letters"
+                            id="did1610653123193"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greek Letters</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1610653123193')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1610653123193')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1610653123193')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::LinuxUnixBash"
+                            id="did1610675941705"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LinuxUnixBash</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1610675941705')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1610675941705')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1610675941705')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::MachineLearning"
+                            id="did1616701543202"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MachineLearning</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1616701543202')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1616701543202')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1616701543202')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::MathAndPhysics"
+                            id="did1612205813742"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MathAndPhysics</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1612205813742')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1612205813742')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1612205813742')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Misc"
+                            id="did1610169837061"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Misc</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1610169837061')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1610169837061')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1610169837061')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Mountaineering"
+                            id="did1578815795160"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mountaineering</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1578815795160')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1578815795160')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1578815795160')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::people"
+                            id="did1567904922965"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;people</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1567904922965')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1567904922965')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1567904922965')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Programming Concepts"
+                            id="did1609381415319"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Programming Concepts</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1609381415319')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1609381415319')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1609381415319')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Python"
+                            id="did1609803282365"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#007700'>1</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1609803282365')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1609803282365')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1609803282365')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="row light-bottom-border">
+                <div class="col-7 col-sm-8 col-lg-9"
+                     style="overflow: hidden; text-overflow: ellipsis;">
+                    <button class="btn btn-link pl-0"
+                            data-full="All::Robotics"
+                            id="did1610079676218"
+                            onclick="decks.select(this.id);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robotics</button>
+                </div>
+
+                <div class="col-1">
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                    <div class="deckDueNumber">
+                            <font color='#e0e0e0'>0</font>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-3 col-lg-2">
+                    <div class="dropdown">
+                        <div style="float:right;">
+                            <button class="btn btn-link dropdown-toggle"
+                                    type="button" id="deckActions"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Actions
+                            </button>
+                            <div class="dropdown-menu"
+                                 aria-labelledby="deckOptions">
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rename('1610079676218')">
+                                    Rename
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.share('1610079676218')">
+                                    Share
+                                </button>
+                                <button class="dropdown-item"
+                                        type="button"
+                                        onclick="decks.rem('1610079676218')">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col text-center">
+        Disk usage: 5.79MB
+        (5.17MB <a href="/media/manage">media</a>)
+    </div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <a href="/shared/decks/" class="btn btn-secondary">Get Shared Decks</a>
+        <a href="/shared/mine" class="btn btn-secondary">My Shared Items</a>
+    </div>
+</div>
+
+
+
+</main>
+
+    <div class="container-fluid bg-gray">
+        <ul class="nav justify-content-center">
+            <li class="nav-item"><a href="https://apps.ankiweb.net"
+                                    class="nav-link">Apps</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link">About</a>
+            </li>
+                <li class="nav-item"><a href="https://help.ankiweb.net"
+                                        class="nav-link">Support</a></li>
+            <li class="nav-item"><a href="/account/terms" class="nav-link">Terms</a>
+            </li>
+            <li class="nav-item"><a href="/account/privacy" class="nav-link">Privacy</a>
+            </li>
+        </ul>
+    </div>
+
+<script src="/static/js/vendor/jquery.min.js?_=dc5e7f18c8d36ac1d3d4753a87c98d0a"
+        type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+
+    <script src="/static/js/decks.js?_=bc80555a9446691c2718776e3120f1bb"
+            type="text/javascript"></script>
+
+    <script>
+        const decks = new anki.DecksList("https://ankiuser.net");
+    </script>
+
+</body>
+</html>
