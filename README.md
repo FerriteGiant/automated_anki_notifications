@@ -55,6 +55,15 @@ Clone the project to a computer you plan to always have running and on which you
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### Running it manually
+`python3 anki_alert_script.py`
+
+To use the included test file instead of logging into ankiweb
+`python3 anki_alert_script.py test`
+
+
+### Running automatically via a cron job
+
 Edit your crontab `crontab -e`
 
 Add the following line assuming that you placed the project into your home directory and want the script to run at 8pm everyday.
@@ -62,6 +71,7 @@ Add the following line assuming that you placed the project into your home direc
 `0 20 * * * python3 ~/automated_anki_notifications/anki_alert_script.py >/dev/null 2>&1`
 
 Each time the script runs it will write a line to `automated_anki_notifications/history.log` with either a success or an error message.
+
 
 #### Example log file
 ```
