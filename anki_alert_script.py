@@ -10,8 +10,9 @@ LOG_FILE = "{}/history.log".format(DIR_PATH)
 PARAMS_FILE = "{}/config_params.yaml".format(DIR_PATH)
 
 
-###
 def create_timestamp() -> str:
+  """Return a string containing timestamp info"""
+
   now = dt.now()
   unix_timestamp = int(now.timestamp())
   date_string = now.strftime("%Y%m%d")
@@ -19,22 +20,25 @@ def create_timestamp() -> str:
   return  "{},{},{}".format(unix_timestamp,date_string,time_string)
 
 
-###
 def log_error(error_msg: str) -> None:
+  """Write an error message to the log file and then exit the script."""
+
   log_string = "{},{}\n".format(create_timestamp(),error_msg)
   with open(LOG_FILE,'a') as file:
     file.write(log_string)
   raise SystemExit
 
 
-###
 def log_success(reviews_due: int) -> None:
+  """Write a line to the log file indicating a successful check."""
+
   with open(LOG_FILE,'a') as file:
     file.write("{},Review status checked successfully ({})\n".format(create_timestamp(),reviews_due))
 
 
-### Pull in user specific data from parameter file
 def load_config_params(file_name: str) -> dict:
+  """Pull in user specific data from parameter file."""
+
   try:
     with open(file_name) as file:
       params = yaml.load(file, Loader=yaml.FullLoader)
@@ -44,8 +48,9 @@ def load_config_params(file_name: str) -> dict:
   return params
 
 
-### Login to ankiweb and grab the ankiweb.net/decks page
 def scrape_ankiweb(params: dict) -> bytes:
+  """Login to ankiweb and grab the ankiweb.net/decks page."""
+
   ANKI_LOGIN_FORM_POST_URL = 'https://ankiweb.net/account/login'
   ANKI_DECKS_URL = 'https://ankiweb.net/decks/'
   
@@ -88,9 +93,11 @@ def scrape_ankiweb(params: dict) -> bytes:
   return content
 
 
-### Parse html and sum all due cards
-### If there are any nested decks, those due cards will be double counted
 def munge_decks_page(decks_page_content: bytes) -> int:
+  """Parse html and sum all due cards.
+  Note: If there are any nested decks, those due cards will be double counted.
+  """ 
+
   bs_decks_page = bs(decks_page_content,'html.parser')
   parent_divs = bs_decks_page.find_all('div',{'class':'deckDueNumber'})
   if len(parent_divs) < 2:
@@ -102,8 +109,9 @@ def munge_decks_page(decks_page_content: bytes) -> int:
 
   return reviews_due
 
-### If appropraite, trigger the IFTTT webhooks endpoint
 def send_alert(params: dict, reviews_due: int) -> None:
+  """If appropraite, trigger the IFTTT webhooks endpoint."""
+
   if reviews_due > 0:
     ifttt_post_url = ''.join(["https://maker.ifttt.com/trigger/",\
                              params['ifttt_event_name'],"/with/key/",\
