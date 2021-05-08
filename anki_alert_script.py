@@ -20,7 +20,7 @@ def create_timestamp() -> str:
 
 
 ###
-def log_error(error_msg):
+def log_error(error_msg: str) -> None:
   log_string = "{},{}\n".format(create_timestamp(),error_msg)
   with open(LOG_FILE,'a') as file:
     file.write(log_string)
@@ -28,13 +28,13 @@ def log_error(error_msg):
 
 
 ###
-def log_success(reviews_due):
+def log_success(reviews_due: int) -> None:
   with open(LOG_FILE,'a') as file:
     file.write("{},Review status checked successfully ({})\n".format(create_timestamp(),reviews_due))
 
 
 ### Pull in user specific data from parameter file
-def load_config_params(file_name: str):
+def load_config_params(file_name: str) -> dict:
   try:
     with open(file_name) as file:
       params = yaml.load(file, Loader=yaml.FullLoader)
@@ -45,7 +45,7 @@ def load_config_params(file_name: str):
 
 
 ### Login to ankiweb and grab the ankiweb.net/decks page
-def scrape_ankiweb(params: dict):
+def scrape_ankiweb(params: dict) -> bytes:
   ANKI_LOGIN_FORM_POST_URL = 'https://ankiweb.net/account/login'
   ANKI_DECKS_URL = 'https://ankiweb.net/decks/'
   
@@ -90,7 +90,7 @@ def scrape_ankiweb(params: dict):
 
 ### Parse html and sum all due cards
 ### If there are any nested decks, those due cards will be double counted
-def munge_decks_page(decks_page_content):
+def munge_decks_page(decks_page_content: bytes) -> int:
   bs_decks_page = bs(decks_page_content,'html.parser')
   parent_divs = bs_decks_page.find_all('div',{'class':'deckDueNumber'})
   if len(parent_divs) < 2:
@@ -103,7 +103,7 @@ def munge_decks_page(decks_page_content):
   return reviews_due
 
 ### If appropraite, trigger the IFTTT webhooks endpoint
-def send_alert(params, reviews_due):
+def send_alert(params: dict, reviews_due: int) -> None:
   if reviews_due > 0:
     ifttt_post_url = ''.join(["https://maker.ifttt.com/trigger/",\
                              params['ifttt_event_name'],"/with/key/",\
