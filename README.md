@@ -26,7 +26,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a script intended to by run as a cronjob which will check [Ankiweb](https://ankiweb.net) to see if you have any pending card reviews and, if so, send a push notification to your phone using IFTTT.
+This is a script intended to be run as a cronjob which will check [Ankiweb](https://ankiweb.net) to see if you have any pending card reviews and, if so, send a push notification to your phone using IFTTT.
 
 
 <!-- GETTING STARTED -->
